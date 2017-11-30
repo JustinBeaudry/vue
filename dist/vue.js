@@ -3291,6 +3291,11 @@ function initMethods (vm, methods) {
           vm
         );
       }
+      if (['_', '$'].indexOf(key[0]) > -1) {
+        warn(
+          "methods with a prefix of '_' or '$' are not recommended as they may conflict\n           with internal vue methods"
+        );
+      }
     }
   }
 }
